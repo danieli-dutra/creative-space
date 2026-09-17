@@ -1,0 +1,82 @@
+/* ==========================================================================
+   COMPONENT
+   Card
+   ========================================================================== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  transition:
+    background-color var(--transition-fast) var(--ease-standard),
+    border-color var(--transition-fast) var(--ease-standard),
+    box-shadow var(--transition-fast) var(--ease-standard),
+    transform var(--transition-fast) var(--ease-standard);
+}
+
+
+/* --------------------------------------------------------------------------
+   Variants
+   -------------------------------------------------------------------------- */
+
+.card--default {
+  background: var(--surface);
+}
+
+.card--outlined {
+  background: transparent;
+  box-shadow: none;
+}
+
+.card--elevated {
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+
+/* --------------------------------------------------------------------------
+   Padding
+   -------------------------------------------------------------------------- */
+
+.card--padding-none {
+  padding: 0;
+}
+
+.card--padding-sm {
+  padding: var(--spacing-16);
+}
+
+.card--padding-md {
+  padding: var(--spacing-24);
+}
+
+.card--padding-lg {
+  padding: var(--spacing-32);
+}
+
+
+/* --------------------------------------------------------------------------
+   Interactive
+   -------------------------------------------------------------------------- */
+
+.card--interactive {
+  cursor: pointer;
+}
+
+.card--interactive:hover {
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+}
+
+.card--interactive:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.card--interactive:active {
+  transform: translateY(0);
+}

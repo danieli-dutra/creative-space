@@ -1,0 +1,72 @@
+/* ==========================================================================
+   COMPONENT
+   Theme Switch
+   ========================================================================== */
+
+.theme-switch {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 52px;
+  height: 28px;
+  padding: 2px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+
+  background: var(--surface);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-normal) var(--ease-standard),
+    border-color var(--transition-normal) var(--ease-standard),
+    box-shadow var(--transition-fast) var(--ease-standard);
+}
+
+.theme-switch:hover {
+  border-color: var(--brand-accent);
+}
+
+.theme-switch:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================================
+   Thumb
+   ========================================================================== */
+
+.theme-switch__thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: var(--brand-accent);
+  color: var(--text-inverse);
+
+  transition:
+    transform var(--transition-normal) var(--ease-smooth),
+    background-color var(--transition-normal) var(--ease-smooth);
+}
+
+
+/* ==========================================================================
+   States
+   ========================================================================== */
+
+.theme-switch.is-light .theme-switch__thumb {
+  transform: translateX(0);
+}
+
+.theme-switch.is-dark .theme-switch__thumb {
+  transform: translateX(24px);
+}

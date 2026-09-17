@@ -1,0 +1,118 @@
+/* ==========================================================================
+   COMPONENT
+   Button
+   ========================================================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+
+  padding: var(--spacing-12) var(--spacing-24);
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+
+  font: inherit;
+  font-weight: var(--font-semibold);
+  line-height: 1;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background-color var(--transition-fast) var(--ease-standard),
+    border-color var(--transition-fast) var(--ease-standard),
+    color var(--transition-fast) var(--ease-standard),
+    transform var(--transition-instant) var(--ease-standard),
+    opacity var(--transition-fast) var(--ease-standard);
+}
+
+
+/* ==========================================================================
+   Sizes
+   ========================================================================== */
+
+.button--sm {
+  padding: var(--spacing-8) var(--spacing-16);
+  font-size: var(--font-small);
+}
+
+.button--md {
+  padding: var(--spacing-12) var(--spacing-24);
+  font-size: var(--font-body);
+}
+
+.button--lg {
+  padding: var(--spacing-16) var(--spacing-32);
+  font-size: var(--font-subtitle);
+}
+
+
+/* ==========================================================================
+   Variants
+   ========================================================================== */
+
+.button--primary {
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--button-primary-bg-hover);
+}
+
+.button--primary:active:not(:disabled) {
+  background: var(--button-primary-bg-active);
+  transform: translateY(1px);
+}
+
+
+.button--secondary {
+  background: var(--button-secondary-bg);
+  border-color: var(--border-strong);
+  color: var(--button-secondary-text);
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: var(--surface-hover);
+  border-color: var(--brand-primary);
+}
+
+.button--secondary:active:not(:disabled) {
+  background: var(--surface-active);
+}
+
+
+.button--ghost {
+  background: transparent;
+  color: inherit;
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: var(--surface-hover);
+}
+
+.button--ghost:active:not(:disabled) {
+  opacity: 0.8;
+}
+
+
+/* ==========================================================================
+   States
+   ========================================================================== */
+
+.button:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+.button--loading {
+  pointer-events: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}

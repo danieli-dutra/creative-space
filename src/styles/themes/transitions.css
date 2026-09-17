@@ -1,0 +1,31 @@
+/* ==========================================================================
+   DESIGN SYSTEM
+   Theme Transitions
+   ========================================================================== */
+
+:where(
+  html,
+  body,
+  #root,
+  header,
+  footer,
+  nav,
+  main,
+  section,
+  article,
+  aside,
+  button,
+  input,
+  textarea,
+  select,
+  a,
+  svg
+) {
+  transition:
+    background-color var(--transition-normal) var(--ease-standard),
+    color var(--transition-normal) var(--ease-standard),
+    border-color var(--transition-normal) var(--ease-standard),
+    fill var(--transition-normal) var(--ease-standard),
+    stroke var(--transition-normal) var(--ease-standard),
+    box-shadow var(--transition-normal) var(--ease-standard);
+}

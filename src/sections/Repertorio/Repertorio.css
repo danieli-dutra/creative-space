@@ -1,0 +1,536 @@
+/* ==========================================================================
+   SECTION
+   Repertório
+   ========================================================================== */
+
+.repertorio {
+  padding-block: clamp(9rem, 13vw, 13rem);
+  background: var(--surface);
+}
+
+.repertorio__container {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Intro
+   -------------------------------------------------------------------------- */
+
+.repertorio__intro {
+  max-width: 900px;
+}
+
+.repertorio__eyebrow,
+.repertorio__trajectory-eyebrow {
+  display: inline-flex;
+
+  margin-bottom: var(--spacing-24);
+
+  color: var(--brand-accent);
+
+  font-family: var(--body-family);
+  font-size: var(--font-small);
+  font-weight: var(--font-semibold);
+
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.repertorio__title {
+  max-width: 900px;
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--heading-family);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-extra-tight);
+
+  text-wrap: balance;
+}
+
+.repertorio__description {
+  max-width: 680px;
+
+  margin: var(--spacing-32) 0 0;
+
+  color: var(--text-secondary);
+
+  font-family: var(--body-family);
+  font-size: var(--font-subtitle);
+  line-height: var(--line-height-relaxed);
+
+  text-wrap: pretty;
+}
+
+/* --------------------------------------------------------------------------
+   Places
+   -------------------------------------------------------------------------- */
+
+.repertorio__places {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: clamp(5rem, 9vw, 8rem);
+
+  border-top: 1px solid var(--border);
+}
+
+.repertorio__place {
+  padding: var(--spacing-32) var(--spacing-32) 0 0;
+}
+
+.repertorio__place + .repertorio__place {
+  padding-left: var(--spacing-32);
+  border-left: 1px solid var(--border);
+}
+
+.repertorio__place-name {
+  display: block;
+
+  margin-bottom: var(--spacing-24);
+
+  color: var(--brand-primary);
+
+  font-family: var(--heading-family);
+  font-size: var(--font-small);
+  font-weight: var(--font-bold);
+
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.repertorio__place-title {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--heading-family);
+  font-size: var(--font-title);
+  font-weight: var(--font-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.repertorio__place-description {
+  max-width: 340px;
+
+  margin: var(--spacing-16) 0 0;
+
+  color: var(--text-secondary);
+
+  font-family: var(--body-family);
+  font-size: var(--font-body);
+  line-height: var(--line-height-relaxed);
+}
+
+/* --------------------------------------------------------------------------
+   Transition
+   -------------------------------------------------------------------------- */
+
+.repertorio__transition {
+  max-width: 720px;
+
+  margin: clamp(5rem, 9vw, 8rem) 0 0;
+  padding-top: var(--spacing-32);
+
+  border-top: 1px solid var(--border);
+}
+
+.repertorio__transition p {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--heading-family);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: var(--font-medium);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* --------------------------------------------------------------------------
+   Trajectory
+   -------------------------------------------------------------------------- */
+
+.repertorio__trajectory {
+  margin-top: clamp(7rem, 12vw, 11rem);
+}
+
+.repertorio__trajectory-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: var(--spacing-32);
+
+  margin-bottom: var(--spacing-48);
+}
+
+.repertorio__trajectory-eyebrow {
+  margin-bottom: var(--spacing-16);
+}
+
+.repertorio__trajectory-title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--heading-family);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-extra-tight);
+}
+
+.repertorio__controls {
+  display: flex;
+  flex-shrink: 0;
+
+  gap: var(--spacing-8);
+}
+
+.repertorio__control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-full);
+
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-normal) var(--ease-standard),
+    border-color var(--transition-normal) var(--ease-standard),
+    color var(--transition-normal) var(--ease-standard),
+    opacity var(--transition-normal) var(--ease-standard);
+}
+
+.repertorio__control:hover:not(:disabled) {
+  border-color: var(--brand-primary);
+
+  background: var(--surface-hover);
+
+  color: var(--brand-primary);
+}
+
+.repertorio__control:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.repertorio__control:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   Timeline
+   -------------------------------------------------------------------------- */
+
+.repertorio__timeline {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  cursor: grab;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+
+  overscroll-behavior-x: contain;
+}
+
+.repertorio__timeline:active {
+  cursor: grabbing;
+}
+
+.repertorio__timeline::-webkit-scrollbar {
+  height: 6px;
+}
+
+.repertorio__timeline::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.repertorio__timeline::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-full);
+
+  background: var(--border-strong);
+}
+
+.repertorio__timeline-track {
+  position: relative;
+
+  display: flex;
+
+  width: max-content;
+  min-width: 100%;
+
+  padding-block: var(--spacing-24) var(--spacing-32);
+}
+
+/* --------------------------------------------------------------------------
+   Timeline Item
+   -------------------------------------------------------------------------- */
+
+.repertorio__timeline-item {
+  position: relative;
+
+  width: clamp(280px, 31vw, 380px);
+
+  padding-right: var(--spacing-48);
+}
+
+/* Horizontal line */
+
+.repertorio__timeline-track::before {
+  content: "";
+
+  position: absolute;
+  z-index: 0;
+
+  top: 50%;
+
+  left: 0;
+  right: 0;
+
+  height: 1px;
+
+  background: color-mix(
+    in srgb,
+    var(--brand-accent) 45%,
+    transparent
+  );
+}
+
+/* --------------------------------------------------------------------------
+   Timeline Card
+   -------------------------------------------------------------------------- */
+
+.repertorio__timeline-card {
+  min-height: 190px;
+
+  padding: var(--spacing-24);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  background: var(--background);
+
+  transition:
+    border-color var(--transition-normal) var(--ease-standard),
+    transform var(--transition-normal) var(--ease-standard);
+}
+
+.repertorio__timeline-card:hover {
+  border-color: var(--brand-primary);
+
+  transform: translateY(-3px);
+}
+
+.repertorio__timeline-item:nth-child(odd) {
+  padding-bottom: 110px;
+}
+
+.repertorio__timeline-item:nth-child(even) {
+  padding-top: 110px;
+}
+
+/* --------------------------------------------------------------------------
+   Marker
+   -------------------------------------------------------------------------- */
+
+.repertorio__timeline-marker {
+  position: absolute;
+  z-index: 2;
+
+  left: -1px;
+  top: calc(50% - 18px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid var(--brand-accent);
+  border-radius: var(--radius-full);
+
+  background: var(--background);
+
+  color: var(--brand-accent);
+
+  font-family: var(--body-family);
+  font-size: var(--font-caption);
+  font-weight: var(--font-semibold);
+
+  box-shadow: 0 0 0 5px var(--background);
+}
+
+.repertorio__timeline-category {
+  display: block;
+
+  margin-bottom: var(--spacing-16);
+
+  color: var(--brand-accent);
+
+  font-family: var(--body-family);
+  font-size: var(--font-caption);
+  font-weight: var(--font-semibold);
+
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.repertorio__timeline-title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--heading-family);
+  font-size: var(--font-title);
+  font-weight: var(--font-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.repertorio__timeline-description {
+  margin: var(--spacing-12) 0 0;
+
+  color: var(--text-secondary);
+
+  font-family: var(--body-family);
+  font-size: var(--font-small);
+  line-height: var(--line-height-relaxed);
+}
+
+.repertorio__hint {
+  margin: var(--spacing-16) 0 0;
+
+  color: var(--text-muted);
+
+  font-family: var(--body-family);
+  font-size: var(--font-caption);
+
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   Tablet
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .repertorio {
+    padding-block: var(--spacing-96);
+  }
+
+  .repertorio__places {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .repertorio__place {
+    padding: var(--spacing-32) 0;
+  }
+
+  .repertorio__place + .repertorio__place {
+    padding-left: 0;
+
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+
+  .repertorio__place-title {
+    max-width: 500px;
+  }
+
+  .repertorio__place-description {
+    max-width: 600px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 576px) {
+  .repertorio {
+    padding-block: var(--spacing-80);
+  }
+
+  .repertorio__container {
+    width: min(100%, calc(100% - 2rem));
+  }
+
+  .repertorio__title {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+  }
+
+  .repertorio__description {
+    margin-top: var(--spacing-24);
+
+    font-size: var(--font-body);
+  }
+
+  .repertorio__places {
+    margin-top: var(--spacing-64);
+  }
+
+  .repertorio__transition {
+    margin-top: var(--spacing-64);
+  }
+
+  .repertorio__trajectory {
+    margin-top: var(--spacing-80);
+  }
+
+  .repertorio__trajectory-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin-bottom: var(--spacing-32);
+  }
+
+  .repertorio__controls {
+    align-self: flex-end;
+  }
+
+  .repertorio__timeline-item {
+    width: 280px;
+
+    padding-right: var(--spacing-32);
+  }
+
+  .repertorio__timeline-item:nth-child(odd) {
+    padding-bottom: 90px;
+  }
+
+  .repertorio__timeline-item:nth-child(even) {
+    padding-top: 90px;
+  }
+
+  .repertorio__timeline-card {
+    min-height: 180px;
+
+    padding: var(--spacing-20);
+  }
+
+  .repertorio__hint {
+    text-align: left;
+  }
+}

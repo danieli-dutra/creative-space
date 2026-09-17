@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Como Eu Construo
+   Creative Space
+   ========================================================================== */
+
+.como-construo {
+  padding-block: clamp(9rem, 13vw, 13rem);
+}
+
+.como-construo__container {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.6fr);
+  column-gap: clamp(4rem, 7vw, 7rem);
+}
+
+/* --------------------------------------------------------------------------
+   Intro
+   -------------------------------------------------------------------------- */
+
+.como-construo__intro {
+  align-self: start;
+
+  position: sticky;
+  top: 6rem;
+}
+
+.como-construo__eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: var(--spacing-32);
+
+  color: var(--brand-accent);
+
+  font-family: var(--body-family);
+  font-size: var(--font-small);
+  font-weight: var(--font-weight-semibold);
+
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.como-construo__title {
+  max-width: 100%;
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--heading-family);
+  font-size: clamp(2.8rem, 4vw, 4.2rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-extra-tight);
+
+  text-wrap: balance;
+}
+
+.como-construo__title strong {
+  color: var(--brand-primary);
+  font-weight: inherit;
+}
+
+.como-construo__description {
+  max-width: 38ch;
+
+  margin: var(--spacing-32) 0 0;
+
+  color: var(--text-secondary);
+
+  font-family: var(--body-family);
+  font-size: var(--font-subtitle);
+  line-height: var(--line-height-relaxed);
+
+  text-wrap: pretty;
+}
+
+/* --------------------------------------------------------------------------
+   Steps
+   -------------------------------------------------------------------------- */
+
+.como-construo__steps {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4.5rem;
+
+  padding-block: var(--spacing-8);
+}
+
+/* --------------------------------------------------------------------------
+   Step
+   -------------------------------------------------------------------------- */
+
+.como-construo__step {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  column-gap: var(--spacing-24);
+
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   Timeline
+   -------------------------------------------------------------------------- */
+
+.como-construo__step:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  z-index: 0;
+
+  top: 1.5rem;
+  bottom: -7.5rem;
+  left: 1.5rem;
+
+  width: 1px;
+
+  background: color-mix(
+    in srgb,
+    var(--brand-accent) 42%,
+    transparent
+  );
+}
+
+/* --------------------------------------------------------------------------
+   Step Number
+   -------------------------------------------------------------------------- */
+
+.como-construo__step-number {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+
+  border: 1px solid
+    color-mix(in srgb, var(--brand-accent) 70%, transparent);
+
+  border-radius: var(--radius-full);
+
+  background: var(--background);
+
+  color: var(--brand-accent);
+
+  font-family: var(--body-family);
+  font-size: var(--font-caption);
+  font-weight: var(--font-weight-semibold);
+
+  letter-spacing: var(--letter-spacing-normal);
+
+  box-shadow: 0 0 0 4px var(--background);
+}
+
+/* --------------------------------------------------------------------------
+   Step Content
+   -------------------------------------------------------------------------- */
+
+.como-construo__step-content {
+  padding-top: var(--spacing-4);
+}
+
+.como-construo__step-title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-family: var(--heading-family);
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  font-weight: var(--font-weight-semibold);
+
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.como-construo__step-description {
+  max-width: 68ch;
+
+  margin: var(--spacing-12) 0 0;
+
+  color: var(--text-secondary);
+
+  font-family: var(--body-family);
+  font-size: var(--font-body);
+  line-height: var(--line-height-relaxed);
+
+  text-wrap: pretty;
+}
+
+/* --------------------------------------------------------------------------
+   Tablet
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .como-construo {
+    padding-block: var(--spacing-96);
+  }
+
+  .como-construo__container {
+    grid-template-columns: 1fr;
+    row-gap: var(--spacing-80);
+  }
+
+  .como-construo__intro {
+    position: static;
+
+    max-width: 680px;
+  }
+
+  .como-construo__title {
+    max-width: 560px;
+  }
+
+  .como-construo__description {
+    max-width: 60ch;
+  }
+
+  .como-construo__steps {
+    max-width: 760px;
+  }
+
+  .como-construo__step:not(:last-child)::after {
+    bottom: -7.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 576px) {
+  .como-construo {
+    padding-block: var(--spacing-80);
+  }
+
+  .como-construo__container {
+    width: min(100%, calc(100% - 2rem));
+  }
+
+  .como-construo__intro {
+    max-width: 100%;
+  }
+
+  .como-construo__eyebrow {
+    margin-bottom: var(--spacing-24);
+  }
+
+  .como-construo__title {
+    max-width: 100%;
+
+    font-size: clamp(2.4rem, 9vw, 3.2rem);
+  }
+
+  .como-construo__description {
+    margin-top: var(--spacing-24);
+
+    font-size: var(--font-body);
+  }
+
+  .como-construo__steps {
+    gap: var(--spacing-48);
+  }
+
+  /* ------------------------------------------------------------------------
+     Timeline · Mobile
+     ------------------------------------------------------------------------ */
+
+  .como-construo__step:not(:last-child)::after {
+    top: 1.25rem;
+    bottom: -5.5rem;
+    left: 1.25rem;
+  }
+
+  .como-construo__step {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    column-gap: var(--spacing-16);
+  }
+
+  /* ------------------------------------------------------------------------
+     Step Number
+     ------------------------------------------------------------------------ */
+
+  .como-construo__step-number {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    font-size: 0.7rem;
+
+    box-shadow: 0 0 0 3px var(--background);
+  }
+
+  /* ------------------------------------------------------------------------
+     Step Content
+     ------------------------------------------------------------------------ */
+
+  .como-construo__step-content {
+    padding-top: var(--spacing-4);
+  }
+
+  .como-construo__step-title {
+    font-size: 1.15rem;
+  }
+
+  .como-construo__step-description {
+    margin-top: var(--spacing-8);
+
+    font-size: var(--font-body);
+    line-height: var(--line-height-normal);
+  }
+}

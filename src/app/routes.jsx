@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
+import Header from "@/components/navigation/Header";
+
 import Hero from "@/sections/Hero/Hero";
 import Repertorio from "@/sections/Repertorio/Repertorio";
 import Galeria from "@/sections/Galeria/Galeria";
@@ -11,6 +13,8 @@ import ParaOndeQueroIr from "@/sections/ParaOndeQueroIr/ParaOndeQueroIr";
 function Home() {
   return (
     <>
+      <Header />
+
       <Hero />
       <Repertorio />
       <Galeria />

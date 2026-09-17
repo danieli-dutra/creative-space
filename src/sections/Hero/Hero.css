@@ -16,40 +16,58 @@
   background: var(--background);
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Container
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .hero__container {
   width: min(100%, 1280px);
-
   margin: 0 auto;
 
   padding: var(--spacing-96) var(--spacing-24);
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Content
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .hero__content {
-  max-width: 980px;
+  max-width: 1180px;
 }
 
-.hero__eyebrow {
-  margin-bottom: var(--spacing-24);
 
-  color: var(--text-secondary);
+/* ==========================================================================
+   Eyebrow
+   ========================================================================== */
+
+.hero__eyebrow {
+  margin: 0 0 var(--spacing-24);
+
+  color: var(--electric-blue-500);
 
   font-family: var(--heading-family);
   font-size: var(--font-small);
   font-weight: var(--font-bold);
   line-height: var(--line-height-normal);
+
   letter-spacing: var(--letter-spacing-wide);
 }
 
+.hero__eyebrow span {
+  color: var(--text-muted);
+}
+
+
+/* ==========================================================================
+   Title
+   ========================================================================== */
+
 .hero__title {
-  max-width: 920px;
+  max-width: 1120px;
+
+  margin: 0;
 
   color: var(--text-primary);
 
@@ -57,6 +75,7 @@
   font-size: var(--font-hero);
   font-weight: var(--font-bold);
   line-height: var(--line-height-tight);
+
   letter-spacing: var(--letter-spacing-extra-tight);
 }
 
@@ -66,10 +85,15 @@
   color: var(--brand-primary);
 }
 
-.hero__description {
-  max-width: 760px;
 
-  margin-top: var(--spacing-32);
+/* ==========================================================================
+   Description
+   ========================================================================== */
+
+.hero__description {
+  max-width: 1000px;
+
+  margin: var(--spacing-32) 0 0;
 
   color: var(--text-secondary);
 
@@ -79,14 +103,14 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Explore
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .hero__explore {
   display: inline-flex;
   align-items: center;
-
   gap: var(--spacing-8);
 
   margin-top: var(--spacing-48);
@@ -123,16 +147,33 @@
   font-size: var(--font-body);
   line-height: 1;
 
-  transition: transform var(--transition-normal) var(--ease-standard);
+  transition:
+    transform var(--transition-normal) var(--ease-standard);
 }
 
 .hero__explore:hover .hero__explore-icon {
   transform: translateY(3px);
 }
 
-/* --------------------------------------------------------------------------
-   Tablet
-   -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__title {
+    max-width: 1000px;
+  }
+
+  .hero__description {
+    max-width: 900px;
+  }
+}
+
 
 @media (max-width: 900px) {
   .hero {
@@ -143,14 +184,11 @@
     padding: var(--spacing-80) var(--spacing-24);
   }
 
-  .hero__content {
-    max-width: 760px;
+  .hero__title {
+    max-width: 900px;
   }
 }
 
-/* --------------------------------------------------------------------------
-   Mobile
-   -------------------------------------------------------------------------- */
 
 @media (max-width: 560px) {
   .hero {

@@ -5,7 +5,9 @@ function Hero() {
     <section id="inicio" className="hero">
       <div className="hero__container">
         <div className="hero__content">
-          <p className="hero__eyebrow">DANIELI DUTRA</p>
+          <p className="hero__eyebrow">
+            CREATIVE SPACE <span>|</span> DANI DUTRA
+          </p>
 
           <h1 className="hero__title">
             Transformar ideias em experiências
@@ -19,6 +21,7 @@ function Hero() {
 
           <a href="#repertorio" className="hero__explore">
             <span>Explorar</span>
+
             <span className="hero__explore-icon" aria-hidden="true">
               ↓
             </span>

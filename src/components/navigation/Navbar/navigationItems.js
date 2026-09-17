@@ -1,28 +1,10 @@
 const navigationItems = [
-  {
-    label: "Repertório",
-    href: "#repertorio",
-  },
-  {
-    label: "Galeria",
-    href: "#galeria",
-  },
-  {
-    label: "O que me move",
-    href: "#o-que-me-move",
-  },
-  {
-    label: "O que eu construo",
-    href: "#o-que-eu-construo",
-  },
-  {
-    label: "Como eu construo",
-    href: "#como-eu-construo",
-  },
-  {
-    label: "Para onde eu quero ir",
-    href: "#para-onde-eu-quero-ir",
-  },
+  { label: "Repertório", href: "#repertorio" },
+  { label: "Galeria", href: "#galeria" },
+  { label: "Essência", href: "#o-que-me-move" },
+  { label: "Projetos", href: "#o-que-eu-construo" },
+  { label: "Processo Criativo", href: "#como-eu-construo" },
+  { label: "Caminho", href: "#para-onde-quero-ir" },
 ];
 
 export default navigationItems;

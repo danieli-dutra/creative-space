@@ -5,20 +5,27 @@
 
 .repertorio {
   padding-block: clamp(9rem, 13vw, 13rem);
+
   background: var(--surface);
 }
+
+
+/* ==========================================================================
+   Container
+   ========================================================================== */
 
 .repertorio__container {
   width: min(1200px, calc(100% - 3rem));
   margin: 0 auto;
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Intro
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .repertorio__intro {
-  max-width: 900px;
+  max-width: 1000px;
 }
 
 .repertorio__eyebrow,
@@ -27,7 +34,7 @@
 
   margin-bottom: var(--spacing-24);
 
-  color: var(--brand-accent);
+  color: var(--electric-blue-500);
 
   font-family: var(--body-family);
   font-size: var(--font-small);
@@ -38,7 +45,8 @@
 }
 
 .repertorio__title {
-  max-width: 900px;
+  max-width: 1000px;
+
   margin: 0;
 
   color: var(--text-primary);
@@ -52,31 +60,22 @@
   text-wrap: balance;
 }
 
-.repertorio__description {
-  max-width: 680px;
-
-  margin: var(--spacing-32) 0 0;
-
-  color: var(--text-secondary);
-
-  font-family: var(--body-family);
-  font-size: var(--font-subtitle);
-  line-height: var(--line-height-relaxed);
-
-  text-wrap: pretty;
+.repertorio__title span {
+  color: var(--brand-primary);
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Places
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .repertorio__places {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  margin-top: clamp(5rem, 9vw, 8rem);
+  margin-top: clamp(3rem, 4vw, 4rem);
 
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .repertorio__place {
@@ -85,13 +84,14 @@
 
 .repertorio__place + .repertorio__place {
   padding-left: var(--spacing-32);
-  border-left: 1px solid var(--border);
+
+  border-left: 1px solid var(--border-subtle);
 }
 
 .repertorio__place-name {
   display: block;
 
-  margin-bottom: var(--spacing-24);
+  margin-bottom: var(--spacing-32);
 
   color: var(--brand-primary);
 
@@ -104,14 +104,14 @@
 }
 
 .repertorio__place-title {
-  max-width: 300px;
+  max-width: 320px;
 
   margin: 0;
 
   color: var(--text-primary);
 
   font-family: var(--heading-family);
-  font-size: var(--font-title);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: var(--font-semibold);
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
@@ -129,37 +129,39 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Transition
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .repertorio__transition {
-  max-width: 720px;
+  max-width: 760px;
 
-  margin: clamp(5rem, 9vw, 8rem) 0 0;
+  margin: clamp(4rem, 6vw, 6rem) 0 0;
   padding-top: var(--spacing-32);
 
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .repertorio__transition p {
   margin: 0;
 
-  color: var(--text-primary);
+  color: var(--text-secondary);
 
   font-family: var(--heading-family);
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-  font-weight: var(--font-medium);
-  line-height: var(--line-height-tight);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-relaxed);
   letter-spacing: var(--letter-spacing-tight);
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Trajectory
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .repertorio__trajectory {
-  margin-top: clamp(7rem, 12vw, 11rem);
+  margin-top: clamp(6rem, 9vw, 9rem);
 }
 
 .repertorio__trajectory-header {
@@ -187,6 +189,11 @@
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-extra-tight);
 }
+
+
+/* ==========================================================================
+   Controls
+   ========================================================================== */
 
 .repertorio__controls {
   display: flex;
@@ -237,9 +244,10 @@
   cursor: not-allowed;
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Timeline
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .repertorio__timeline {
   width: 100%;
@@ -284,9 +292,10 @@
   padding-block: var(--spacing-24) var(--spacing-32);
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Timeline Item
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .repertorio__timeline-item {
   position: relative;
@@ -296,7 +305,10 @@
   padding-right: var(--spacing-48);
 }
 
-/* Horizontal line */
+
+/* ==========================================================================
+   Timeline Line
+   ========================================================================== */
 
 .repertorio__timeline-track::before {
   content: "";
@@ -313,14 +325,15 @@
 
   background: color-mix(
     in srgb,
-    var(--brand-accent) 45%,
+    var(--brand-primary) 45%,
     transparent
   );
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Timeline Card
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 .repertorio__timeline-card {
   min-height: 190px;
@@ -351,44 +364,40 @@
   padding-top: 110px;
 }
 
-/* --------------------------------------------------------------------------
-   Marker
-   -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   Timeline Marker
+   ========================================================================== */
 
 .repertorio__timeline-marker {
   position: absolute;
   z-index: 2;
 
   left: -1px;
-  top: calc(50% - 18px);
+  top: calc(50% - 6px);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 12px;
+  height: 12px;
 
-  width: 36px;
-  height: 36px;
-
-  border: 1px solid var(--brand-accent);
+  border: 2px solid var(--brand-primary);
   border-radius: var(--radius-full);
 
   background: var(--background);
 
-  color: var(--brand-accent);
-
-  font-family: var(--body-family);
-  font-size: var(--font-caption);
-  font-weight: var(--font-semibold);
-
   box-shadow: 0 0 0 5px var(--background);
 }
+
+
+/* ==========================================================================
+   Timeline Category
+   ========================================================================== */
 
 .repertorio__timeline-category {
   display: block;
 
   margin-bottom: var(--spacing-16);
 
-  color: var(--brand-accent);
+  color: var(--electric-blue-500);
 
   font-family: var(--body-family);
   font-size: var(--font-caption);
@@ -396,6 +405,11 @@
 
   letter-spacing: var(--letter-spacing-wide);
 }
+
+
+/* ==========================================================================
+   Timeline Title
+   ========================================================================== */
 
 .repertorio__timeline-title {
   margin: 0;
@@ -408,6 +422,11 @@
   line-height: var(--line-height-tight);
 }
 
+
+/* ==========================================================================
+   Timeline Description
+   ========================================================================== */
+
 .repertorio__timeline-description {
   margin: var(--spacing-12) 0 0;
 
@@ -417,6 +436,11 @@
   font-size: var(--font-small);
   line-height: var(--line-height-relaxed);
 }
+
+
+/* ==========================================================================
+   Timeline Hint
+   ========================================================================== */
 
 .repertorio__hint {
   margin: var(--spacing-16) 0 0;
@@ -429,9 +453,10 @@
   text-align: right;
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Tablet
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 @media (max-width: 900px) {
   .repertorio {
@@ -451,7 +476,7 @@
   .repertorio__place + .repertorio__place {
     padding-left: 0;
 
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-subtle);
     border-left: 0;
   }
 
@@ -464,9 +489,10 @@
   }
 }
 
-/* --------------------------------------------------------------------------
+
+/* ==========================================================================
    Mobile
-   -------------------------------------------------------------------------- */
+   ========================================================================== */
 
 @media (max-width: 576px) {
   .repertorio {
@@ -481,22 +507,16 @@
     font-size: clamp(2.4rem, 10vw, 3.2rem);
   }
 
-  .repertorio__description {
-    margin-top: var(--spacing-24);
-
-    font-size: var(--font-body);
-  }
-
   .repertorio__places {
-    margin-top: var(--spacing-64);
+    margin-top: var(--spacing-48);
   }
 
   .repertorio__transition {
-    margin-top: var(--spacing-64);
+    margin-top: var(--spacing-48);
   }
 
   .repertorio__trajectory {
-    margin-top: var(--spacing-80);
+    margin-top: var(--spacing-64);
   }
 
   .repertorio__trajectory-header {

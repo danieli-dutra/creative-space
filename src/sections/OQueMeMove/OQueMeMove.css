@@ -1,0 +1,318 @@
+.o-que-me-move {
+  position: relative;
+  padding: var(--spacing-96) 0;
+  background: var(--surface);
+}
+
+.o-que-me-move__container {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+}
+
+/* ========================================
+   INTRO
+======================================== */
+
+.o-que-me-move__intro {
+  max-width: 860px;
+  margin-bottom: var(--spacing-64);
+}
+
+.o-que-me-move__eyebrow {
+  display: block;
+  margin-bottom: var(--spacing-16);
+
+  color: var(--electric-blue-500);
+  font-family: var(--heading-family);
+  font-size: var(--font-small);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.o-que-me-move__title {
+  margin: 0;
+
+  color: var(--text-primary);
+  font-family: var(--heading-family);
+  font-size: var(--font-display);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-extra-tight);
+}
+
+.o-que-me-move__title span {
+  display: block;
+  color: var(--brand-primary);
+}
+
+.o-que-me-move__description {
+  max-width: 720px;
+  margin: var(--spacing-24) 0 0;
+
+  color: var(--text-secondary);
+  font-family: var(--body-family);
+  font-size: var(--font-subtitle);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ========================================
+   PILLARS
+======================================== */
+
+.o-que-me-move__pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-24);
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.o-que-me-move__pillar {
+  position: relative;
+  min-width: 0;
+
+  padding: var(--spacing-32);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  background: var(--background);
+
+  overflow: hidden;
+
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    background-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+/* detalhe luminoso muito sutil no canto */
+.o-que-me-move__pillar::before {
+  content: "";
+
+  position: absolute;
+  top: -80px;
+  right: -80px;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: var(--electric-blue-500);
+
+  opacity: 0;
+  filter: blur(70px);
+
+  pointer-events: none;
+
+  transition: opacity 300ms ease;
+}
+
+/* hover */
+.o-que-me-move__pillar:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--electric-blue-500);
+
+  background: var(--surface);
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.o-que-me-move__pillar:hover::before {
+  opacity: 0.08;
+}
+
+/* ========================================
+   CARD TOP
+======================================== */
+
+.o-que-me-move__pillar-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: var(--spacing-24);
+}
+
+.o-que-me-move__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  color: var(--electric-blue-500);
+
+  transition:
+    transform 240ms ease,
+    color 240ms ease;
+}
+
+.o-que-me-move__pillar:hover .o-que-me-move__icon {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.o-que-me-move__arrow {
+  color: var(--text-muted);
+
+  opacity: 0;
+  transform: translate(-4px, 4px);
+
+  transition:
+    opacity 240ms ease,
+    transform 240ms ease,
+    color 240ms ease;
+}
+
+.o-que-me-move__pillar:hover .o-que-me-move__arrow {
+  color: var(--electric-blue-500);
+
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.o-que-me-move__content {
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
+}
+
+.o-que-me-move__pillar-title {
+  margin: 0;
+
+  color: var(--electric-blue-500);
+  font-family: var(--heading-family);
+  font-size: var(--font-title);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.o-que-me-move__highlight {
+  margin: var(--spacing-16) 0 0;
+
+  color: var(--brand-primary);
+  font-family: var(--heading-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.o-que-me-move__pillar-description {
+  margin: var(--spacing-12) 0 0;
+
+  color: var(--text-secondary);
+  font-family: var(--body-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .o-que-me-move {
+    padding: var(--spacing-80) 0;
+  }
+
+  .o-que-me-move__intro {
+    margin-bottom: var(--spacing-56);
+  }
+
+  .o-que-me-move__pillars {
+    gap: var(--spacing-20);
+  }
+
+  .o-que-me-move__pillar {
+    padding: var(--spacing-24);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .o-que-me-move {
+    padding: var(--spacing-64) 0;
+  }
+
+  .o-que-me-move__container {
+    padding: 0 var(--spacing-16);
+  }
+
+  .o-que-me-move__intro {
+    margin-bottom: var(--spacing-40);
+  }
+
+  .o-que-me-move__title {
+    font-size: var(--font-heading);
+  }
+
+  .o-que-me-move__description {
+    margin-top: var(--spacing-16);
+    font-size: var(--font-body);
+  }
+
+  .o-que-me-move__pillars {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-16);
+  }
+
+  .o-que-me-move__pillar {
+    padding: var(--spacing-24);
+  }
+
+  .o-que-me-move__pillar-top {
+    margin-bottom: var(--spacing-20);
+  }
+
+  /* No mobile, a seta fica sempre visível */
+  .o-que-me-move__arrow {
+    color: var(--electric-blue-500);
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .o-que-me-move__pillar,
+  .o-que-me-move__pillar::before,
+  .o-que-me-move__icon,
+  .o-que-me-move__arrow {
+    transition: none;
+  }
+
+  .o-que-me-move__pillar:hover {
+    transform: none;
+  }
+
+  .o-que-me-move__pillar:hover .o-que-me-move__icon {
+    transform: none;
+  }
+}

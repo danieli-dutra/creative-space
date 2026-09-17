@@ -6,7 +6,6 @@ import "./Repertorio.css";
 const timelineItems = [
   {
     id: 1,
-    number: "01",
     title: "Edificações",
     category: "FORMAÇÃO TÉCNICA",
     description:
@@ -14,7 +13,6 @@ const timelineItems = [
   },
   {
     id: 2,
-    number: "02",
     title: "eSports",
     category: "LIDERANÇA · COMPETIÇÃO",
     description:
@@ -22,7 +20,6 @@ const timelineItems = [
   },
   {
     id: 3,
-    number: "03",
     title: "Artes Digitais",
     category: "DESIGN · COMUNICAÇÃO",
     description:
@@ -30,7 +27,6 @@ const timelineItems = [
   },
   {
     id: 4,
-    number: "04",
     title: "IBGE",
     category: "CENSO 2022 · LIDERANÇA",
     description:
@@ -38,7 +34,6 @@ const timelineItems = [
   },
   {
     id: 5,
-    number: "05",
     title: "Tecnologia",
     category: "DESENVOLVIMENTO · PRODUTO",
     description:
@@ -79,21 +74,18 @@ function Repertorio() {
     <section className="repertorio" id="repertorio">
       <div className="repertorio__container">
         <header className="repertorio__intro">
-          <span className="repertorio__eyebrow">Repertório</span>
+          <span className="repertorio__eyebrow">REPERTÓRIO</span>
 
           <h2 className="repertorio__title">
-            Sou carioca, mas não fui construída por um único lugar.
+            Sou <span>carioca</span>, mas não fui construída por um único lugar.
           </h2>
-
-          <p className="repertorio__description">
-            Cada experiência trouxe uma perspectiva diferente e foi ampliando
-            minha forma de olhar, criar e me relacionar com o mundo.
-          </p>
         </header>
 
         <div className="repertorio__places">
           <article className="repertorio__place">
-            <span className="repertorio__place-name">Rio de Janeiro</span>
+            <span className="repertorio__place-name">
+              RIO DE JANEIRO
+            </span>
 
             <h3 className="repertorio__place-title">
               O lado comunicativo.
@@ -106,7 +98,9 @@ function Repertorio() {
           </article>
 
           <article className="repertorio__place">
-            <span className="repertorio__place-name">Minas Gerais</span>
+            <span className="repertorio__place-name">
+              MINAS GERAIS
+            </span>
 
             <h3 className="repertorio__place-title">
               O jeito de acolher e encantar.
@@ -119,7 +113,9 @@ function Repertorio() {
           </article>
 
           <article className="repertorio__place">
-            <span className="repertorio__place-name">São Paulo</span>
+            <span className="repertorio__place-name">
+              SÃO PAULO
+            </span>
 
             <h3 className="repertorio__place-title">
               A tecnologia em movimento.
@@ -143,7 +139,7 @@ function Repertorio() {
           <div className="repertorio__trajectory-header">
             <div>
               <span className="repertorio__trajectory-eyebrow">
-                Trajetória
+                TRAJETÓRIA
               </span>
 
               <h3 className="repertorio__trajectory-title">
@@ -199,9 +195,10 @@ function Repertorio() {
                     </p>
                   </div>
 
-                  <div className="repertorio__timeline-marker">
-                    {item.number}
-                  </div>
+                  <div
+                    className="repertorio__timeline-marker"
+                    aria-hidden="true"
+                  />
                 </article>
               ))}
             </div>

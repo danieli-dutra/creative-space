@@ -49,8 +49,13 @@ export default function ComoConstruo() {
           </span>
 
           <h2 className="como-construo__title">
-            Não começo pelo código.
-            <strong> Começo pelo problema.</strong>
+            <span className="como-construo__title-primary">
+              Não começo pelo código.
+            </span>
+
+            <span className="como-construo__title-highlight">
+              Começo pelo problema.
+            </span>
           </h2>
 
           <p className="como-construo__description">

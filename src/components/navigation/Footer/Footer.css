@@ -1,0 +1,130 @@
+/* ==========================================================================
+   FOOTER
+   Creative Space
+   ========================================================================== */
+
+.footer {
+  position: relative;
+
+  padding: var(--spacing-32) 0;
+
+  background: var(--navy-900);
+
+  border-top: 1px solid var(--navy-700);
+}
+
+/* --------------------------------------------------------------------------
+   Container
+   -------------------------------------------------------------------------- */
+
+.footer__container {
+  width: min(100%, 1280px);
+
+  margin: 0 auto;
+
+  padding: 0 var(--spacing-24);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: var(--spacing-32);
+}
+
+/* --------------------------------------------------------------------------
+   Copyright
+   -------------------------------------------------------------------------- */
+
+.footer__copyright {
+  margin: 0;
+
+  color: var(--navy-300);
+
+  font-family: var(--body-family);
+  font-size: var(--font-caption);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-normal);
+}
+
+/* --------------------------------------------------------------------------
+   Social Links
+   -------------------------------------------------------------------------- */
+
+.footer__social {
+  display: flex;
+  align-items: center;
+
+  gap: var(--spacing-8);
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid var(--navy-700);
+  border-radius: var(--radius-full);
+
+  color: var(--navy-300);
+
+  text-decoration: none;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.footer__social-link:hover {
+  color: var(--electric-blue-500);
+
+  border-color: var(--electric-blue-500);
+
+  background: var(--navy-800);
+
+  transform: translateY(-2px);
+}
+
+.footer__social-link:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 560px) {
+  .footer {
+    padding: var(--spacing-24) 0;
+  }
+
+  .footer__container {
+    flex-direction: column;
+    justify-content: center;
+
+    gap: var(--spacing-16);
+
+    padding: 0 var(--spacing-16);
+
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer__social-link {
+    transition: none;
+  }
+
+  .footer__social-link:hover {
+    transform: none;
+  }
+}

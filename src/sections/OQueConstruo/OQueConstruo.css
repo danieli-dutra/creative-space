@@ -38,7 +38,7 @@
 
   margin-bottom: var(--spacing-16);
 
-  color: var(--text-secondary);
+  color: var(--electric-blue-500);
 
   font-family: var(--heading-family);
   font-size: var(--font-small);
@@ -49,6 +49,8 @@
 }
 
 .o-que-construo__title {
+  margin: 0;
+
   color: var(--text-primary);
 
   font-family: var(--heading-family);
@@ -115,58 +117,58 @@
 .o-que-construo__visual {
   position: relative;
 
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-
   min-height: 360px;
 
   overflow: hidden;
 
-  padding: var(--spacing-24);
-
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--surface),
-      var(--surface-elevated)
-    );
+  background: var(--surface-elevated);
 }
 
-.o-que-construo__visual::before {
-  content: "";
+.o-que-construo__visual img {
+  display: block;
 
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+.o-que-construo__visual-overlay {
   position: absolute;
 
-  inset: var(--spacing-16);
+  inset: 0;
 
-  border: 1px dashed var(--border-strong);
-  border-radius: var(--radius-md);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 
-  opacity: 0.65;
+  padding: var(--spacing-24);
+
+  background:
+    linear-gradient(
+      to top,
+      color-mix(
+        in srgb,
+        var(--navy-900) 65%,
+        transparent
+      ),
+      transparent 35%
+    );
+
+  pointer-events: none;
 }
 
-.o-que-construo__visual-number,
 .o-que-construo__visual-label {
   position: relative;
+
   z-index: 1;
-}
 
-.o-que-construo__visual-number {
-  color: var(--brand-primary);
-
-  font-family: var(--heading-family);
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: var(--font-bold);
-  line-height: 0.9;
-  letter-spacing: var(--letter-spacing-extra-tight);
-}
-
-.o-que-construo__visual-label {
-  color: var(--text-muted);
+  color: var(--white);
 
   font-family: var(--heading-family);
   font-size: var(--font-small);
@@ -175,7 +177,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Project content
+   Project Content
    -------------------------------------------------------------------------- */
 
 .o-que-construo__project-content {
@@ -203,6 +205,8 @@
 }
 
 .o-que-construo__project-title {
+  margin: 0;
+
   color: var(--text-primary);
 
   font-family: var(--heading-family);
@@ -259,6 +263,8 @@
 }
 
 .o-que-construo__detail p {
+  margin: 0;
+
   color: var(--text-primary);
 
   font-family: var(--body-family);
@@ -274,6 +280,7 @@
 .o-que-construo__links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   gap: var(--spacing-24);
 
@@ -299,10 +306,21 @@
     transform var(--transition-normal) var(--ease-standard);
 }
 
+.o-que-construo__link span:last-child {
+  color: var(--electric-blue-500);
+
+  transition:
+    transform var(--transition-normal) var(--ease-standard);
+}
+
 .o-que-construo__link:hover {
-  color: var(--brand-primary);
+  color: var(--electric-blue-500);
 
   transform: translateY(-2px);
+}
+
+.o-que-construo__link:hover span:last-child {
+  transform: translate(2px, -2px);
 }
 
 .o-que-construo__link:focus-visible {
@@ -311,13 +329,17 @@
 }
 
 /* --------------------------------------------------------------------------
-   Featured project
+   Featured Project
    -------------------------------------------------------------------------- */
 
 .o-que-construo__project--featured .o-que-construo__visual {
   min-height: 440px;
 
   border-color: var(--lavender-300);
+}
+
+.o-que-construo__project--featured .o-que-construo__visual img {
+  min-height: 440px;
 }
 
 /* --------------------------------------------------------------------------
@@ -341,6 +363,11 @@
 
   .o-que-construo__visual,
   .o-que-construo__project--featured .o-que-construo__visual {
+    min-height: 360px;
+  }
+
+  .o-que-construo__visual img,
+  .o-que-construo__project--featured .o-que-construo__visual img {
     min-height: 360px;
   }
 }
@@ -384,11 +411,16 @@
   .o-que-construo__project--featured .o-que-construo__visual {
     min-height: 280px;
 
-    padding: var(--spacing-16);
+    padding: 0;
   }
 
-  .o-que-construo__visual::before {
-    inset: var(--spacing-12);
+  .o-que-construo__visual img,
+  .o-que-construo__project--featured .o-que-construo__visual img {
+    min-height: 280px;
+  }
+
+  .o-que-construo__visual-overlay {
+    padding: var(--spacing-16);
   }
 
   .o-que-construo__details {

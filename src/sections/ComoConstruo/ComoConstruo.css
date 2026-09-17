@@ -58,9 +58,19 @@
   text-wrap: balance;
 }
 
-.como-construo__title strong {
+.como-construo__title-primary,
+.como-construo__title-highlight {
+  display: block;
+
+  font-weight: var(--font-weight-bold);
+}
+
+.como-construo__title-primary {
+  color: var(--text-primary);
+}
+
+.como-construo__title-highlight {
   color: var(--brand-primary);
-  font-weight: inherit;
 }
 
 .como-construo__description {
@@ -143,7 +153,11 @@
   height: 3rem;
 
   border: 1px solid
-    color-mix(in srgb, var(--electric-blue-500) 70%, transparent);
+    color-mix(
+      in srgb,
+      var(--electric-blue-500) 70%,
+      transparent
+    );
 
   border-radius: var(--radius-full);
 

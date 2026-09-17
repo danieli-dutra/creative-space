@@ -9,6 +9,7 @@ import OQueMeMove from "@/sections/OQueMeMove/OQueMeMove";
 import OQueConstruo from "@/sections/OQueConstruo/OQueConstruo";
 import ComoConstruo from "@/sections/ComoConstruo/ComoConstruo";
 import ParaOndeQueroIr from "@/sections/ParaOndeQueroIr/ParaOndeQueroIr";
+import Footer from "../components/navigation/Footer/Footer";
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
       <OQueConstruo />
       <ComoConstruo />
       <ParaOndeQueroIr />
+      <Footer />
     </>
   );
 }

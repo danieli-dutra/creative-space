@@ -7,43 +7,94 @@ import "./Galeria.css";
 const galleryItems = [
   {
     id: 1,
-    category: "ARTES DIGITAIS",
-    title: "Criação",
+    category: "EDIFICAÇÕES",
+    title: "Projetos",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659351/01.jpg",
+    alt: "Projetos desenvolvidos na área de edificações",
   },
   {
     id: 2,
-    category: "ESPORTS",
-    title: "Competição",
+    category: "UMEI - PBH",
+    title: "Arquitetura Sustentável",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659351/02.jpg",
+    alt: "Projeto de arquitetura sustentável para UMEI da Prefeitura de Belo Horizonte",
   },
   {
     id: 3,
-    category: "COLLAB",
-    title: "Colaboração",
+    category: "ESPORTS",
+    title: "Competição - Line Feminina",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659351/03.jpg",
+    alt: "Experiência com esports e competição em line feminina",
   },
   {
     id: 4,
-    category: "EXPERIÊNCIA",
-    title: "IBGE",
+    category: "ESPORTS",
+    title: "Colaboração",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659352/04.jpg",
+    alt: "Experiência de colaboração no universo dos esports",
   },
   {
     id: 5,
-    category: "TECNOLOGIA",
-    title: "Desenvolvimento",
+    category: "ESPORTS",
+    title: "Reconhecimento",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659351/05.png",
+    alt: "Registro de reconhecimento relacionado à trajetória nos esports",
   },
   {
     id: 6,
-    category: "UX/UI",
-    title: "Experiência",
+    category: "DESIGN",
+    title: "Roots of Life",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659352/06.jpg",
+    alt: "Projeto de design Roots of Life",
   },
   {
     id: 7,
-    category: "COLLAB",
-    title: "Construção",
+    category: "COMUNICAÇÃO",
+    title: "Campanha de Conscientização",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659352/07.jpg",
+    alt: "Campanha de comunicação e conscientização",
   },
   {
     id: 8,
     category: "EXPERIMENTAÇÃO",
-    title: "Descoberta",
+    title: "UX/UI",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659351/08.png",
+    alt: "Experimentação relacionada a UX e UI",
+  },
+  {
+    id: 9,
+    category: "IBGE",
+    title: "Censo 2022",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659519/09.jpg",
+    alt: "Experiência profissional no Censo 2022 do IBGE",
+  },
+  {
+    id: 10,
+    category: "LEGADO",
+    title: "Meu herói",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659352/10.jpg",
+    alt: "Registro pessoal relacionado a legado e memória",
+  },
+  {
+    id: 11,
+    category: "UNIVERSIDADE",
+    title: "UVA",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659351/11.png",
+    alt: "Registro da trajetória universitária na UVA",
+  },
+  {
+    id: 12,
+    category: "TECNOLOGIA",
+    title: "+PraTI",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659352/12.png",
+    alt: "Experiência de formação em tecnologia no +PraTI",
+  },
+  {
+    id: 13,
+    category: "IMPROVÁVEL",
+    title: "Neri Oxman / Renato Winning",
+    src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659352/13.jpg",
+    alt: "Encontro entre referências improváveis de criatividade, tecnologia e inovação",
   },
 ];
 
@@ -105,7 +156,10 @@ function Galeria() {
             </p>
           </div>
 
-          <div className="galeria__controls" aria-label="Controles da galeria">
+          <div
+            className="galeria__controls"
+            aria-label="Controles da galeria"
+          >
             <button
               type="button"
               className="galeria__control"
@@ -131,15 +185,22 @@ function Galeria() {
         <div className="galeria__viewport" ref={emblaRef}>
           <div className="galeria__track">
             {galleryItems.map((item) => (
-              <article className="galeria__item" key={item.id}>
-                <div className="galeria__image-placeholder">
-                  <span className="galeria__placeholder-number">
-                    {String(item.id).padStart(2, "0")}
-                  </span>
+              <article
+                className="galeria__item"
+                key={item.id}
+              >
+                <div className="galeria__image">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                  />
                 </div>
 
                 <div className="galeria__caption">
-                  <span className="galeria__category">{item.category}</span>
+                  <span className="galeria__category">
+                    {item.category}
+                  </span>
 
                   <h3 className="galeria__item-title">
                     <Tag
@@ -147,6 +208,7 @@ function Galeria() {
                       strokeWidth={2}
                       aria-hidden="true"
                     />
+
                     <span>{item.title}</span>
                   </h3>
                 </div>

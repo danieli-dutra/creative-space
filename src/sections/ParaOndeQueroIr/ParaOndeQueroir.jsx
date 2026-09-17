@@ -2,7 +2,6 @@ import "./ParaOndeQueroIr.css";
 
 const chapters = [
   {
-    number: "01",
     concept: "Pertencimento",
     title: "Imersão Vem Pra Globo",
     description:
@@ -12,22 +11,41 @@ const chapters = [
         id: "belonging-1",
         size: "large",
         label: "Vem Pra Globo",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789660870/WhatsApp_Image_2026-09-17_at_08.38.13.jpg",
+        alt: "Registro da Imersão Vem Pra Globo",
       },
       {
         id: "belonging-2",
-        size: "small",
+        size: "medium",
         label: "Primeiro encontro",
-        polaroid: true,
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789660870/WhatsApp_Image_2026-09-17_at_08.38.13_5.jpg",
+        alt: "Registro do primeiro encontro na Imersão Vem Pra Globo",
       },
       {
         id: "belonging-3",
-        size: "medium",
+        size: "small",
         label: "Experiência",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789660870/1784132945812.jpg",
+        alt: "Registro da experiência na Imersão Vem Pra Globo",
+      },
+      {
+        id: "belonging-4",
+        size: "medium",
+        label: "Tecnologia",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789660931/1784172233267.jpg",
+        alt: "Registro relacionado à tecnologia na Imersão Vem Pra Globo",
+      },
+      {
+        id: "belonging-5",
+        size: "small",
+        label: "Conexão",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789660869/WhatsApp_Image_2026-09-17_at_08.38.13_3.jpg",
+        alt: "Registro de conexão na Imersão Vem Pra Globo",
       },
     ],
   },
+
   {
-    number: "02",
     concept: "Confiança",
     title: "GloboSec Week 2026",
     description:
@@ -37,22 +55,41 @@ const chapters = [
         id: "confidence-1",
         size: "medium",
         label: "GloboSec Week",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661490/WhatsApp_Image_2026-09-17_at_08.41.56_1.jpg",
+        alt: "Registro da GloboSec Week 2026",
       },
       {
         id: "confidence-2",
         size: "large",
         label: "Tecnologia & Segurança",
-        polaroid: true,
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661490/WhatsApp_Image_2026-09-17_at_08.41.56.jpg",
+        alt: "Registro da experiência de tecnologia e segurança na GloboSec Week 2026",
       },
       {
         id: "confidence-3",
         size: "small",
         label: "Aprendizado",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661491/WhatsApp_Image_2026-09-17_at_08.41.55_1.jpg",
+        alt: "Registro de aprendizado na GloboSec Week 2026",
+      },
+      {
+        id: "confidence-4",
+        size: "medium",
+        label: "Experiência",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661491/WhatsApp_Image_2026-09-17_at_08.41.55.jpg",
+        alt: "Registro da experiência na GloboSec Week 2026",
+      },
+      {
+        id: "confidence-5",
+        size: "small",
+        label: "Conexões",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661490/WhatsApp_Image_2026-09-17_at_08.41.56_2.jpg",
+        alt: "Registro de conexões na GloboSec Week 2026",
       },
     ],
   },
+
   {
-    number: "03",
     concept: "Responsabilidade",
     title: "GloboSec Week · Estúdios Globo",
     description:
@@ -62,17 +99,52 @@ const chapters = [
         id: "responsibility-1",
         size: "large",
         label: "Estúdios Globo",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661760/WhatsApp_Image_2026-09-17_at_08.39.49.jpg",
+        alt: "Registro da visita aos Estúdios Globo",
       },
       {
         id: "responsibility-2",
         size: "small",
         label: "Por trás das câmeras",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661759/WhatsApp_Image_2026-09-17_at_08.40.09.jpg",
+        alt: "Registro dos bastidores dos Estúdios Globo",
       },
       {
         id: "responsibility-3",
         size: "medium",
         label: "ESG & Sustentabilidade",
-        polaroid: true,
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661759/WhatsApp_Image_2026-09-17_at_08.41.56_3.jpg",
+        alt: "Registro relacionado à sustentabilidade nos Estúdios Globo",
+      },
+      {
+        id: "responsibility-4",
+        size: "small",
+        label: "Experiência",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789661845/WhatsApp_Image_2026-09-17_at_13.17.09.jpg",
+        alt: "Registro da experiência nos Estúdios Globo",
+      },
+    ],
+  },
+
+  {
+    concept: "Criação",
+    title: "Academia LED · Maratona de IA",
+    description:
+      "Uma experiência que uniu criatividade, inteligência artificial e narrativa. Foi também onde o Du ganhou vida e passou a fazer parte dessa história.",
+    photos: [
+      {
+        id: "academy-1",
+        size: "large",
+        label: "Academia LED",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789662044/WhatsApp_Image_2026-09-17_at_13.19.31.jpg",
+        alt: "Registro da Academia LED",
+      },
+      {
+        id: "academy-2",
+        size: "large",
+        label: "Maratona de IA",
+        src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789662044/WhatsApp_Image_2026-09-17_at_08.29.42.jpg",
+        alt: "Registro da Maratona de IA",
       },
     ],
   },
@@ -81,21 +153,26 @@ const chapters = [
 function PhotoPlaceholder({ photo }) {
   return (
     <div
-      className={`para-onde-quero-ir__photo para-onde-quero-ir__photo--${photo.size} ${
-        photo.polaroid
-          ? "para-onde-quero-ir__photo--polaroid"
-          : ""
-      }`}
+      className={`para-onde-quero-ir__photo para-onde-quero-ir__photo--${photo.size}`}
     >
-      <div className="para-onde-quero-ir__photo-frame">
-        <span className="para-onde-quero-ir__photo-mark">
-          fotografia
-        </span>
+      {photo.src ? (
+        <img
+          className="para-onde-quero-ir__photo-image"
+          src={photo.src}
+          alt={photo.alt || photo.label}
+          loading="lazy"
+        />
+      ) : (
+        <div className="para-onde-quero-ir__photo-content">
+          <span className="para-onde-quero-ir__photo-mark">
+            fotografia
+          </span>
 
-        <span className="para-onde-quero-ir__photo-label">
-          {photo.label}
-        </span>
-      </div>
+          <span className="para-onde-quero-ir__photo-label">
+            {photo.label}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
@@ -104,10 +181,6 @@ function Chapter({ chapter }) {
   return (
     <article className="para-onde-quero-ir__chapter">
       <div className="para-onde-quero-ir__chapter-header">
-        <span className="para-onde-quero-ir__chapter-number">
-          {chapter.number}
-        </span>
-
         <div className="para-onde-quero-ir__chapter-heading">
           <span className="para-onde-quero-ir__concept">
             {chapter.concept}
@@ -125,7 +198,10 @@ function Chapter({ chapter }) {
 
       <div className="para-onde-quero-ir__mosaic">
         {chapter.photos.map((photo) => (
-          <PhotoPlaceholder key={photo.id} photo={photo} />
+          <PhotoPlaceholder
+            key={photo.id}
+            photo={photo}
+          />
         ))}
       </div>
     </article>
@@ -157,18 +233,17 @@ function ParaOndeQueroIr() {
 
         <div className="para-onde-quero-ir__chapters">
           {chapters.map((chapter) => (
-            <Chapter key={chapter.number} chapter={chapter} />
+            <Chapter
+              key={chapter.title}
+              chapter={chapter}
+            />
           ))}
         </div>
 
         <div className="para-onde-quero-ir__closing">
-          <span className="para-onde-quero-ir__closing-mark">
-            próxima página
-          </span>
-
           <p className="para-onde-quero-ir__closing-text">
-            Continuar aprendendo, construindo e descobrindo onde esse caminho
-            pode me levar.
+            Continuar aprendendo, construindo, evoluindo e descobrindo
+            tudo o que podemos criar juntos.
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-# Creative Space · Danieli Dutra
+# Creative Space | Danieli Dutra
 
 > Um espaço para reunir experiências, projetos e referências que fazem parte da minha trajetória entre design, comunicação e tecnologia.
 

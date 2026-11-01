@@ -111,6 +111,11 @@
   cursor: grabbing;
 }
 
+.galeria__viewport:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: -3px;
+}
+
 .galeria__track {
   display: flex;
   gap: var(--spacing-24);
@@ -127,11 +132,11 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: var(--surface-elevated);
+  background: linear-gradient(135deg, var(--surface-elevated), var(--surface));
 }
 
 .galeria__image img {
@@ -144,7 +149,8 @@
 
 .galeria__caption {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: baseline;
   gap: var(--spacing-12);
   padding-top: var(--spacing-16);
 }
@@ -168,7 +174,9 @@
   font-family: var(--heading-family);
   font-size: var(--font-small);
   font-weight: var(--font-semibold);
-  line-height: 0.85;
+  line-height: var(--line-height-normal);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .galeria__item-title svg {

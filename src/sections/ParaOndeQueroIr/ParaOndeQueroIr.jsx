@@ -129,6 +129,8 @@ const chapters = [
   {
     concept: "Criação",
     title: "Academia LED · Maratona de IA",
+    videoId: "1IIVYoX9OybJZZ_0hz25uW8-eTU-QxfCg",
+    selectionUrl: "https://somos.globo.com/movimento-led/academia-led/noticia/conheca-os-80-estudantes-selecionados-para-maratona-de-ia-da-academia-led-globo.ghtml",
     description:
       "Uma experiência que uniu criatividade, inteligência artificial e narrativa. Foi também onde o Du ganhou vida e passou a fazer parte dessa história.",
     photos: [
@@ -193,6 +195,17 @@ function Chapter({ chapter }) {
           <p className="para-onde-quero-ir__chapter-description">
             {chapter.description}
           </p>
+          {chapter.selectionUrl && (
+            <p className="para-onde-quero-ir__chapter-description">
+              Minha seleção para a Maratona de IA foi um reconhecimento nesse
+              processo de criação e aprendizado.{' '}
+              <a className="para-onde-quero-ir__evidence-link"
+                href={chapter.selectionUrl} target="_blank" rel="noopener noreferrer">
+                Conheça os 80 selecionados para a Maratona de IA
+                <span aria-hidden="true"> ↗</span>
+              </a>
+            </p>
+          )}
         </div>
       </div>
 
@@ -204,6 +217,27 @@ function Chapter({ chapter }) {
           />
         ))}
       </div>
+      {chapter.videoId && (
+        <figure className="para-onde-quero-ir__video">
+          <div className="para-onde-quero-ir__video-frame">
+            <iframe
+              src={`https://drive.google.com/file/d/${chapter.videoId}/preview`}
+              title="Du — vídeo criativo de inscrição na Maratona de IA da Academia LED"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
+          <figcaption className="para-onde-quero-ir__video-caption">
+            <p>Du, meu unicórnio autoral, em um vídeo de inscrição que explora
+              narrativa, direção visual e inteligência artificial generativa.</p>
+            <a className="para-onde-quero-ir__evidence-link"
+              href={`https://drive.google.com/file/d/${chapter.videoId}/view`}
+              target="_blank" rel="noopener noreferrer">
+              Assistir ao vídeo <span aria-hidden="true">↗</span>
+            </a>
+          </figcaption>
+        </figure>
+      )}
     </article>
   );
 }

@@ -442,6 +442,27 @@
    Timeline Hint
    ========================================================================== */
 
+.repertorio__evidence-link {
+  display: inline-block;
+  margin-top: var(--spacing-16);
+  color: var(--text-primary);
+  font-family: var(--body-family);
+  font-size: var(--font-small);
+  font-weight: var(--font-semibold);
+  line-height: var(--line-height-relaxed);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.repertorio__evidence-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.repertorio__evidence-link:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
 .repertorio__hint {
   margin: var(--spacing-16) 0 0;
 

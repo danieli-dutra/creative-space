@@ -21,6 +21,7 @@ const galleryItems = [
   },
   {
     id: 3,
+    fit: "cover",
     category: "ESPORTS",
     title: "Competição - Line Feminina",
     src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659351/03.jpg",
@@ -28,6 +29,7 @@ const galleryItems = [
   },
   {
     id: 4,
+    fit: "cover",
     category: "ESPORTS",
     title: "Colaboração",
     src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659352/04.jpg",
@@ -63,6 +65,7 @@ const galleryItems = [
   },
   {
     id: 9,
+    fit: "cover",
     category: "IBGE",
     title: "Censo 2022",
     src: "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789659519/09.jpg",
@@ -119,23 +122,24 @@ function Galeria() {
   useEffect(() => {
     if (!emblaApi) return;
 
-    updateNavigation(emblaApi);
+    const frame = requestAnimationFrame(() => updateNavigation(emblaApi));
 
     emblaApi.on("select", updateNavigation);
     emblaApi.on("reInit", updateNavigation);
 
     return () => {
+      cancelAnimationFrame(frame);
       emblaApi.off("select", updateNavigation);
       emblaApi.off("reInit", updateNavigation);
     };
   }, [emblaApi, updateNavigation]);
 
   const scrollPrev = useCallback(() => {
-    emblaApi?.scrollPrev();
+    emblaApi?.scrollPrev(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }, [emblaApi]);
 
   const scrollNext = useCallback(() => {
-    emblaApi?.scrollNext();
+    emblaApi?.scrollNext(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }, [emblaApi]);
 
   return (
@@ -182,7 +186,16 @@ function Galeria() {
           </div>
         </header>
 
-        <div className="galeria__viewport" ref={emblaRef}>
+        <div className="galeria__viewport" ref={emblaRef}
+          role="region" aria-label="Galeria de experiências" aria-roledescription="carrossel"
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+              event.preventDefault();
+              if (event.key === "ArrowLeft") scrollPrev();
+              else scrollNext();
+            }
+          }}>
           <div className="galeria__track">
             {galleryItems.map((item) => (
               <article
@@ -194,6 +207,7 @@ function Galeria() {
                     src={item.src}
                     alt={item.alt}
                     loading="lazy"
+                    style={{ objectFit: item.fit || "contain", objectPosition: item.position || "center" }}
                   />
                 </div>
 

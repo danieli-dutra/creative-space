@@ -14,6 +14,10 @@ const timelineItems = [
   {
     id: 2,
     title: "eSports",
+    link: {
+      label: "Ver reportagem no SporTV",
+      href: "https://sportv.globo.com/site/e-sportv/fifa/noticia/fifa-pro-clubs-equipe-lanca-primeira-line-100percent-feminina-do-brasil.ghtml",
+    },
     category: "LIDERANÇA · COMPETIÇÃO",
     description:
       "Foram cerca de quatro anos entre competição, gestão e liderança de equipes, incluindo a primeira line 100% feminina do Brasil no Pro Clubs.",
@@ -193,6 +197,12 @@ function Repertorio() {
                     <p className="repertorio__timeline-description">
                       {item.description}
                     </p>
+                    {item.link && (
+                      <a className="repertorio__evidence-link" href={item.link.href}
+                        target="_blank" rel="noopener noreferrer">
+                        {item.link.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
                   </div>
 
                   <div

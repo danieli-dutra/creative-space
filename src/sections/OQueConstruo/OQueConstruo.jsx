@@ -9,7 +9,7 @@ const projects = [
       "Aplicação conversacional de educação financeira que ajuda pessoas a registrar despesas, acompanhar metas e construir uma relação mais consciente com o dinheiro.",
     contribution:
       "Liderança · PO · UX/UI · Pesquisa de Mercado · Agentes · Dev Full Stack · Documentação",
-    stack: "React · JavaScript · CrewAi · Python · FastAPI · GitHub",
+    stack: "Frontend: React · JavaScript · Vite. Backend: Java · Spring Boot · API REST. Banco de dados: PostgreSQL. AI Service: Python · CrewAI · MCP.",
     image:
       "https://res.cloudinary.com/bvyzj2l7/image/upload/v1789660446/junta-ai.jpg",
     alt: "Interface do projeto Junta.ai",
@@ -17,7 +17,7 @@ const projects = [
     links: [
       {
         label: "Site",
-        href: "https://junta-ai.vercel.app/",
+        href: "https://junta-ai.com/",
       },
       {
         label: "Repositório Principal",
@@ -96,7 +96,7 @@ function ProjectLinks({ links }) {
           href={link.href}
           className="o-que-construo__link"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <span>{link.label}</span>
           <span aria-hidden="true">↗</span>
